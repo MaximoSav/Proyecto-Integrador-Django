@@ -27,7 +27,7 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 git clone https://github.com/MaximoSav/Proyecto-Integrador-Django.git ~/.ProyectoDjango
 cd ~/.ProyectoDjango
 pip install -r requirements.txt
-python manage.py runserver
+python core/manage.py runserver
 ```
 
 #### Ejecución post-instalación
@@ -36,5 +36,5 @@ Para correr la aplicación debe ingresar esto en la terminal:
 
 ```shell
 cd ~/.ProyectoDjango
-python manage.py runserver
+python core/manage.py runserver
 ```
