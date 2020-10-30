@@ -1,3 +1,5 @@
+<img alt="Logo" src="https://i.imgur.com/vt6aCKB.png" width="100" height="100">
+
 # Proyecto-Integrador-Django [![GitHub release](https://img.shields.io/badge/release-none-blue)](https://github.com/MaximoSav/Proyecto-Integrador-Django/releases) [![Language](https://img.shields.io/badge/lang-espa%C3%B1ol%20%2F%20english-yellow)](#)
 Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Salesiano Villada (ITSV).
  
