@@ -6,7 +6,7 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 
 ## Diagramas:
  - Diagrama de Clases: https://lucid.app/invitations/accept/eae58af3-3696-43c9-adb1-4cd1f43eea5a
- - Diagrama de Casos de Uso: https://lucid.app/lucidchart/ab41cdaf-b055-4612-b2a7-9bb1099d0364/edit?shared=true&page=0_0#?folder_id=home&browser=icon
+ - Diagrama de Casos de Uso: https://lucid.app/invitations/accept/e59f30f5-17fb-4cfc-b96d-572ae9c4a63d
 ## Aplicaciones necesarias
 ### Python
  - Versión: 3
@@ -16,9 +16,19 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 ### Requisitos
 | Paquete | Version |
 |:---|:---:|
-| pytz| 2020.1|
-| Django| 2.2|
-| sqlparse| 0.4.1|
+| Django| 2.2 |
+| django-jet| 1.0.8 |
+| google-api-python-client| 1.4.1 |
+| httplib2| 0.18.1 |
+| oauth2client| 4.1.3 |
+| pkg-resources| 0.0.0 |
+| pyasn1| 0.4.8 |
+| pyasn1-modules| 0.2.8 |
+| pytz| 2020.1 |
+| rsa| 4.6 |
+| six| 1.15.0 |
+| sqlparse| 0.4.1 |
+| uritemplate| 3.0.1 |
 
 ### Instruccciones
 #### Instalacion manual
