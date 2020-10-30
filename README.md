@@ -6,7 +6,7 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 
 ## Diagramas:
  - Diagrama de Clases: https://lucid.app/invitations/accept/eae58af3-3696-43c9-adb1-4cd1f43eea5a
-
+ - Diagrama de Casos de Uso: https://lucid.app/lucidchart/ab41cdaf-b055-4612-b2a7-9bb1099d0364/edit?shared=true&page=0_0#?folder_id=home&browser=icon
 ## Aplicaciones necesarias
 ### Python
  - Versión: 3
