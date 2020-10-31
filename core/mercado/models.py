@@ -2,17 +2,22 @@ from django.db import models
 
 # Create your models here.
 
+class Direccion(models.Model):
+    id = models.AutoField(primary_key=True,)
+    barrio = models.CharField(max_length=30)
+    calle = models.CharField(max_length=30)
+    numero = models.IntegerField()
+
 class Cliente(models.Model):
     DNI = models.AutoField(primary_key=True,)
     nombre = models.CharField(max_length=25,)
     telefono = models.BigIntegerField()
-    direccion = models.CharField(max_length=40)
+    direccion = models.ForeignKey(Direccion, on_delete=models.CASCADE)
 
 class Producto (models.Model):
     id = models.AutoField(primary_key=True,)
     nombre = models.CharField(max_length=40,)
     precio = models.IntegerField()
-    direccion = models.CharField(max_length=60,)
     stock = models.IntegerField()
 
 class Categoria (models.Model):
