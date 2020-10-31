@@ -44,6 +44,13 @@ python core/manage.py migrate
 python core/manage.py collectstatic
 ```
 
+#### Creacion de superusuario
+
+```shell
+cd ~/.ProyectoDjango
+python core/manage.py createsuperuser
+```
+
 #### Ejecución post-instalación
 
 Para correr la aplicación debe ingresar esto en la terminal:
