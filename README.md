@@ -23,6 +23,7 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 | google-api-python-client| 1.4.1 |
 | httplib2| 0.18.1 |
 | oauth2client| 4.1.3 |
+| Pillow| 7.2.0 |
 | pkg-resources| 0.0.0 |
 | pyasn1| 0.4.8 |
 | pyasn1-modules| 0.2.8 |
