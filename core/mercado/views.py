@@ -3,5 +3,5 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 
-class BaseView(TemplateView):
-    template_name = 'mercado/base.html'
+def BaseView(request):
+    return render(request, 'mercado/base.html', {'name': request.user,})
