@@ -39,7 +39,16 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 git clone https://github.com/MaximoSav/Proyecto-Integrador-Django.git ~/.ProyectoDjango
 cd ~/.ProyectoDjango
 pip install -r requirements.txt
-python core/manage.py runserver
+python core/manage.py makemigrations
+python core/manage.py migrate
+python core/manage.py collectstatic
+```
+
+#### Creacion de superusuario
+
+```shell
+cd ~/.ProyectoDjango
+python core/manage.py createsuperuser
 ```
 
 #### Ejecución post-instalación
