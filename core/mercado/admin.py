@@ -12,13 +12,22 @@ class DireccionAdmin(admin.ModelAdmin):
 class ClienteAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Datos', {
-            'fields': ('nombre', 'DNI', 'telefono', 'direccion')
+            'fields': ('nombre', 'telefono', 'direccion')
 
         }),
     )
 
+class ProductoAdmin (admin.ModelAdmin):
+    fieldsets = (
+        ('Datos', {
+            'fields': ('foto', 'nombre', 'precio', 'stock')
+
+        }),
+    )
+    list_display = ['foto','nombre','precio','stock']
+
 admin.site.register(Cliente, ClienteAdmin)
-admin.site.register(Producto)
+admin.site.register(Producto, ProductoAdmin)
 admin.site.register(Categoria)
 admin.site.register(Divisa)
 admin.site.register(Direccion, DireccionAdmin)
