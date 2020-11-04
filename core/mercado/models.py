@@ -9,7 +9,7 @@ class Direccion(models.Model):
     numero = models.IntegerField()
 
 class Cliente(models.Model):
-    DNI = models.AutoField(primary_key=True,)
+    DNI = models.IntegerField(primary_key=True,)
     nombre = models.CharField(max_length=25,)
     telefono = models.BigIntegerField()
     direccion = models.ForeignKey(Direccion, on_delete=models.CASCADE)

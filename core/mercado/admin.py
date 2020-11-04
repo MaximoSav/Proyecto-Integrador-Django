@@ -12,14 +12,14 @@ class DireccionAdmin(admin.ModelAdmin):
 
         }),
     )
-    
+
     list_display = ['barrio','calle', 'numero']
     inlines = [ClienteInline]
 
 class ClienteAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Datos', {
-            'fields': ('nombre', 'telefono', 'direccion')
+            'fields': ('DNI', 'nombre', 'telefono', 'direccion')
 
         }),
     )
