@@ -6,6 +6,13 @@ class ClienteInline(admin.TabularInline):
     model = Cliente
 
 class DireccionAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ('Datos', {
+            'fields': ('barrio', 'calle', 'numero')
+
+        }),
+    )
+    
     list_display = ['barrio','calle', 'numero']
     inlines = [ClienteInline]
 
@@ -16,6 +23,9 @@ class ClienteAdmin(admin.ModelAdmin):
 
         }),
     )
+    search_fields = ['nombre','telefono']
+    list_display = ['nombre','telefono','direccion']
+
 
 class ProductoAdmin (admin.ModelAdmin):
     fieldsets = (
