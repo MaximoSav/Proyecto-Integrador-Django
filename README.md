@@ -18,7 +18,6 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 ### Requisitos
 | Paquete | Version |
 |:---|:---:|
-
 | Django| 2.2 |
 | django-jet| 1.0.8 |
 | google-api-python-client| 1.4.1 |
