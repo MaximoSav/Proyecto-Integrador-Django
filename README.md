@@ -18,6 +18,7 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 ### Requisitos
 | Paquete | Version |
 |:---|:---:|
+
 | Django| 2.2 |
 | django-jet| 1.0.8 |
 | google-api-python-client| 1.4.1 |
@@ -31,6 +32,11 @@ Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Sale
 | six| 1.15.0 |
 | sqlparse| 0.4.1 |
 | uritemplate| 3.0.1 |
+| django-bootstrap4| 2.3.1 |
+| importlib-metadata| 2.0.0 |
+| soupsieve| 2.0.1 |
+| zipp| 3.4.0 |
+| beautifulsoup4| 4.9.3 |
 
 ### Instruccciones
 #### Instalacion manual
