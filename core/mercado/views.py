@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -10,6 +11,7 @@ def BaseView(request):
 def indexView(request):
     return render(request, 'index.html')
 
+@login_required
 def dashboardView(request):
     return render(request, 'mercado/dashboard.html')
 
