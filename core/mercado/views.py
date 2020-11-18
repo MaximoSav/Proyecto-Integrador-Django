@@ -5,3 +5,12 @@ from django.views.generic import TemplateView
 
 def BaseView(request):
     return render(request, 'mercado/base.html', {'name': request.user,})
+
+def dashboardView(request):
+    return render(request, 'mercado/dashboard.html')
+
+def registerView(request):
+    return render(request, 'registration/register.html')
+
+def login(request):
+    return render(request, 'registration/login.html')
