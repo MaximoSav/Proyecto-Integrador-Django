@@ -1,16 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
 def BaseView(request):
     return render(request, 'mercado/base.html', {'name': request.user,})
 
+def indexView(request):
+    return render(request, 'index.html')
+
 def dashboardView(request):
     return render(request, 'mercado/dashboard.html')
 
 def registerView(request):
-    return render(request, 'registration/register.html')
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("login_url")
+    else:
+        form = UserCreationForm()
 
-def login(request):
-    return render(request, 'registration/login.html')
+    return render(request, 'registro/register.html', {'form': form})
+
+#def login(request):
+ #   return render(request, 'registro/login.html')
