@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
-from django.contrib.auth.forms import UserCreationForm
+from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -8,20 +8,17 @@ from django.contrib.auth.decorators import login_required
 def BaseView(request):
     return render(request, 'mercado/base.html', {'name': request.user,})
 
-def indexView(request):
-    return render(request, 'index.html')
-
 @login_required
 def dashboardView(request):
-    return render(request, 'mercado/dashboard.html')
+    return render(request, 'mercado/base.html')
 
 def registerView(request):
     if request.method == "POST":
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("login_url")
     else:
-        form = UserCreationForm()
+        form = RegisterForm()
 
     return render(request, 'registration/register.html', {'form': form})

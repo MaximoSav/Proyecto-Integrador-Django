@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pagina web</title>
 
-    {% load bootstrap4 %}
-    {% bootstrap_css %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Pagina web</title>
+
+	{% load bootstrap4 %}
+	{% bootstrap_css %}
 	{% block css %}
 	{% endblock %}
 </head>
+
 <body>
 	{% block content %}
 	{% endblock %}
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">     
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="/">
-			<img src={% static 'logo.png' %} width="50" height="50" class="d-inline-block align-center" alt="" loading="lazy"></img> Proyecto Integrador 
+			<img src={% static 'logo.png' %} width="50" height="50" class="d-inline-block align-center" alt=""
+				loading="lazy"></img> Proyecto Integrador
 		</a>
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
@@ -34,6 +37,7 @@
 			</form>
 		</div>
 	</nav>
-    {% bootstrap_javascript jquery='full' %}
+	{% bootstrap_javascript jquery='full' %}
 </body>
+
 </html>

@@ -1,10 +1,45 @@
 {% extends 'registration/base.html'%}
-
-{% block content %}
-    <h1>Crear nueva cuenta</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button>Registrarse</button>
-    </form>    
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href={% static 'css/signin.css' %}>
 {% endblock %}
+
+<body>
+    {% block content %}
+    {#{ form.as_p}#}
+    <div style="position: absolute; top: 0; left: 0;width:100%;height:100%;display:flex;">
+        <form class="form-signin text-center" method="POST">
+
+            {% csrf_token %}
+            <h1 class="h3 mb-3 font-weight-normal">Registrar usuario</h1>
+
+            <div class="mb-2">
+                <label for="id_username" class="sr-only">Username</label>
+                <input type="text" name="username" id="id_username" class="form-control" placeholder="Nombre de usuario"
+                    required autofocus>
+
+                <label for="id_password1" class="sr-only">Password</label>
+                <input type="password" name="password1" id="id_password1" class="form-control" placeholder="Contraseña"
+                    required>
+
+                <label for="id_password2" class="sr-only">Password</label>
+                <input type="password" name="password2" id="id_password2" class="form-control"
+                    placeholder="Repita su contraseña" required>
+            </div>
+
+            <ul>
+                <li>Tu contraseña debe tener al menos 8 caracteres.</li>
+                <li>Tu contraseña no puede ser solo numeros.</li>
+            </ul>
+
+            {% for err in form.visible_fields %}
+                {% if err.errors %}
+                <div class="fieldWrapper">{{ err.errors }}</div>
+                {% endif %}
+            {% endfor %}
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
