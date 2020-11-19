@@ -1,0 +1,18 @@
+{% extends 'registration/base.html'%}
+{% load static %}
+<html>
+    <head>
+        <title>Base</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		{% load bootstrap4 %}
+		{% bootstrap_css %}
+
+    </head>    
+    <body>
+        {% block content%}
+            <h1>Hola, bienvenidos</h1>
+        {% endblock %}
+    </body>
+</html>

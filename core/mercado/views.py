@@ -24,7 +24,4 @@ def registerView(request):
     else:
         form = UserCreationForm()
 
-    return render(request, 'registro/register.html', {'form': form})
-
-#def login(request):
- #   return render(request, 'registro/login.html')
+    return render(request, 'registration/register.html', {'form': form})
