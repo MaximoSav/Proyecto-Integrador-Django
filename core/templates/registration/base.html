@@ -12,6 +12,8 @@
 	{% endblock %}
 </head>
 <body>
+	{% block content %}
+	{% endblock %}
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">     
 		<a class="navbar-brand" href="/">
 			<img src={% static 'logo.png' %} width="50" height="50" class="d-inline-block align-center" alt="" loading="lazy"></img> Proyecto Integrador 
@@ -32,8 +34,6 @@
 			</form>
 		</div>
 	</nav>
-	{% block content %}
-	{% endblock %}
     {% bootstrap_javascript jquery='full' %}
 </body>
 </html>
