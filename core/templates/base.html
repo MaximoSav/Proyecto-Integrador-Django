@@ -28,11 +28,6 @@
 				<li class="nav-item">
 					<a class="nav-link active" href="/">Home</a>
 				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" href="/admin">Admin</a>
-				</li>
-
 			</ul>
 
 			<form class="form-inline mt-2 mt-md-0">
@@ -53,6 +48,10 @@
 							<a class="dropdown-item" href="{% url 'register_url' %}">Registrarse</a>
 
 							{% else %}
+
+							{% if user.is_staff %}
+							<a class="dropdown-item" href="/admin">Menu Admin</a>
+							{% endif %}
 
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="{% url 'logout_url' %}">Cerrar sesión</a>

@@ -17,9 +17,11 @@ class Cliente(models.Model):
 class Producto (models.Model):
     id = models.AutoField(primary_key=True,)
     nombre = models.CharField(max_length=40,)
+    descripcion = models.CharField(max_length=255,)
     precio = models.IntegerField()
     stock = models.IntegerField()
     foto = models.ImageField(max_length=100, upload_to='fotos_productos/', default='fotos_productos/default.png', blank=True,)
+
 
 class Categoria (models.Model):
     id = models.AutoField(primary_key=True,)

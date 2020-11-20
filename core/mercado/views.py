@@ -3,12 +3,14 @@ from django.views.generic import TemplateView
 from .forms import RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from .models import Producto
 
 # Create your views here.
 
 
 def BaseView(request):
-    return render(request, 'mercado/main.html', {'name': request.user, })
+    productos = Producto.objects.all()
+    return render(request, 'mercado/main.html', {'productos': productos, })
 
 
 def registerView(request):
