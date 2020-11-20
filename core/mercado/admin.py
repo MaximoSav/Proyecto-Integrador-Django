@@ -30,11 +30,11 @@ class ClienteAdmin(admin.ModelAdmin):
 class ProductoAdmin (admin.ModelAdmin):
     fieldsets = (
         ('Datos', {
-            'fields': ('foto', 'nombre', 'precio', 'stock')
+            'fields': ('foto', 'nombre', 'descripcion', 'precio', 'stock')
 
         }),
     )
-    list_display = ['foto','nombre','precio','stock']
+    list_display = ['nombre', 'descripcion', 'precio', 'stock']
 
 class CategoriaAdmin(admin.ModelAdmin):
     fieldsets = (
