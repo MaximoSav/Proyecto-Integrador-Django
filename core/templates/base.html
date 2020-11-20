@@ -37,20 +37,28 @@
 
 			<form class="form-inline mt-2 mt-md-0">
 				<ul class="navbar-nav mr-auto">
-					{% if user.is_authenticated%}
-					<li class="nav-item">
-						<a class="nav-link" style="color:rgb(86, 155, 103);" href="{% url 'logout_url' %}">Cerrar sesión</a>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" style="color:rgb(86, 155, 103); href=" #"
+							id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false">
+							{% if user.is_authenticated %}
+							{{ user.username}}
+							{% else %}
+							Cuenta
+							{% endif %}
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							{% if user.is_authenticated == False %}
+							<a class="dropdown-item" href="{% url 'login_url' %}">Iniciar Sesion</a>
+							<a class="dropdown-item" href="{% url 'register_url' %}">Registrarse</a>
+
+							{% else %}
+
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="{% url 'logout_url' %}">Cerrar sesión</a>
+							{% endif %}
+						</div>
 					</li>
-					{% else %}
-					<li class="nav-item">
-						<a class="nav-link" style="color:rgb(86, 155, 103);" href="{% url 'login_url' %}">Iniciar
-							Sesion</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" style="color:rgb(86, 155, 103);"
-							href="{% url 'register_url' %}">Registrarse</a>
-					</li>
-					{% endif %}
 				</ul>
 				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
