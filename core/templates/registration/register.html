@@ -34,7 +34,7 @@
 
             {% for err in form.visible_fields %}
                 {% if err.errors %}
-                <div class="fieldWrapper">{{ err.errors }}</div>
+                <div class="fieldWrapper text-danger">{{ err.errors }}</div>
                 {% endif %}
             {% endfor %}
 
