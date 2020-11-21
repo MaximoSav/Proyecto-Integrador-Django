@@ -30,7 +30,8 @@
 				</li>
 			</ul>
 
-			<form class="form-inline mt-2 mt-md-0">
+			<form class="form-inline mt-2 mt-md-0" action="" method="POST">
+				{% csrf_token %}
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" style="color:rgb(86, 155, 103); href=" #"
@@ -59,7 +60,8 @@
 						</div>
 					</li>
 				</ul>
-				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+				<input class="form-control mr-sm-2" name="search" id="search" type="text" placeholder="Search"
+					aria-label="Search">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
 		</div>

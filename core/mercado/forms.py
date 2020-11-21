@@ -7,3 +7,6 @@ class RegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ('username', 'password1', 'password2',)
+
+class BaseForm(forms.Form):
+    search = forms.CharField(label='Search', max_length=100)
