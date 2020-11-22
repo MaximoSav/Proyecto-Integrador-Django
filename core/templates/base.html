@@ -14,9 +14,9 @@
 </head>
 
 <body>
-	<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark mb-4">
+	<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
 		<a class="navbar-brand" href="/">
-			<img src={% static 'logo.png' %} width="50" height="50" class="d-inline-block align-center" alt=""
+			<img src={% static 'logo.png' %} width="40" height="40" class="d-inline-block align-center" alt=""
 				loading="lazy"></img> Proyecto Integrador
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
@@ -26,7 +26,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link active" href="/">Home</a>
+					<a class="nav-link active" href="/">Inicio</a>
 				</li>
 			</ul>
 
@@ -34,7 +34,7 @@
 				{% csrf_token %}
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" style="color:rgb(86, 155, 103); href=" #"
+						<a class="nav-link active dropdown-toggle"
 							id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false">
 							{% if user.is_authenticated %}
@@ -60,7 +60,7 @@
 						</div>
 					</li>
 				</ul>
-				<input class="form-control mr-sm-2" name="search" id="search" type="text" placeholder="Search"
+				<input class="form-control mr-sm-2" name="search" id="search" type="text" required placeholder="Search"
 					aria-label="Search">
 				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 			</form>
@@ -70,6 +70,15 @@
 	{% block content %}
 	{% endblock %}
 	{% bootstrap_javascript jquery='full' %}
+	<footer class="cs-footer bg-dark">
+		<div class="container pt-md-0">
+			<p class="font-size-sm text-center py-3" style="margin-bottom: 0;">
+				<span class="text-light opacity-50">© Todos los derechos reservados. Hecho por</span>
+				<a class="nav-link-style nav-link-light" href="https://github.com/MaximoSav/Proyecto-Integrador-Django/" target="_blank" rel="noopener">
+					El papi como siempre...</a>
+			</p>
+		</div>
+	</footer>
 </body>
 
 </html>

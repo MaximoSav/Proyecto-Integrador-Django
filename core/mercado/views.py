@@ -10,11 +10,11 @@ from .models import Producto
 
 def BaseView(request):
     if request.method == "POST":
-        form = BaseForm(request.POST)
-        if form.is_valid():
-            search_name = form.cleaned_data['search']
-            productos = Producto.objects.filter(nombre__icontains=search_name)
-            
+        if 'search' in request.POST:
+            form = BaseForm(request.POST)
+            if form.is_valid():
+                search_name = form.cleaned_data['search']
+                productos = Producto.objects.filter(nombre__icontains=search_name)
     else:
         form = BaseForm()
         productos = Producto.objects.all()
