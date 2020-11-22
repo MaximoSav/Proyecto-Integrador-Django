@@ -16,12 +16,12 @@ def BaseView(request):
                 search_name = form.cleaned_data['search']
                 productos = Producto.objects.filter(
                     nombre__icontains=search_name)
+                return render(request, 'mercado/main.html', {'productos': productos, })
     else:
         form = BaseForm()
         productos = Producto.objects.all()
         destacados = Destacado.objects.all()
-
-    return render(request, 'mercado/main.html', {'productos': productos, 'destacados': destacados, })
+        return render(request, 'mercado/main.html', {'productos': productos, 'destacados': destacados, })
 
 
 def registerView(request):
