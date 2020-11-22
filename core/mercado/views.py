@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from .models import Producto
+from .models import Producto, Destacado
 
 # Create your views here.
 
@@ -14,12 +14,14 @@ def BaseView(request):
             form = BaseForm(request.POST)
             if form.is_valid():
                 search_name = form.cleaned_data['search']
-                productos = Producto.objects.filter(nombre__icontains=search_name)
+                productos = Producto.objects.filter(
+                    nombre__icontains=search_name)
     else:
         form = BaseForm()
         productos = Producto.objects.all()
+        destacados = Destacado.objects.all()
 
-    return render(request, 'mercado/main.html', {'productos': productos, })
+    return render(request, 'mercado/main.html', {'productos': productos, 'destacados': destacados, })
 
 
 def registerView(request):
@@ -28,7 +30,8 @@ def registerView(request):
             form = BaseForm(request.POST)
             if form.is_valid():
                 search_name = form.cleaned_data['search']
-                productos = Producto.objects.filter(nombre__icontains=search_name)
+                productos = Producto.objects.filter(
+                    nombre__icontains=search_name)
                 return render(request, 'mercado/main.html', {'productos': productos, })
         else:
             form = RegisterForm(request.POST)

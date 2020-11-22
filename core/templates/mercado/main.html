@@ -8,17 +8,18 @@
 <body>
     {% block content %}
     <main role="main" style="min-height: 80.5vh;">
-        {% if productos %}
+        {% if destacados %}
         <div id="carouselExampleInterval" class="carousel slide align-items-center" data-ride="carousel">
             <ol class="carousel-indicators">
-                {% for producto in productos %}
-                <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0}}" class="{% if forloop.counter == 1 %}active{% endif %}"></li>
+                {% for destacado in destacados %}
+                <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0}}"
+                    class="{% if forloop.counter == 1 %}active{% endif %}"></li>
                 {% endfor %}
             </ol>
             <div class="carousel-inner">
-                {% for producto in productos %}
+                {% for destacado in destacados %}
                 <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" data-interval="10000">
-                    <img src="{{ producto.foto.url }}" class="d-block w-100" alt="...">
+                    <img src="{{ destacado.producto.foto.url }}" class="d-block w-100" alt="...">
                 </div>
                 {% endfor %}
             </div>
