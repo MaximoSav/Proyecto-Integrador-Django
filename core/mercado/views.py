@@ -50,3 +50,6 @@ def logoutView(request):
         return redirect("base_url")
     else:
         return redirect("login_url")
+
+def carritoView(request):
+    return render(request, 'mercado/carrito.html')
