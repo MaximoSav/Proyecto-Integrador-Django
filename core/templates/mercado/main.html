@@ -40,6 +40,27 @@
             </a>
         </div>
         {% endif %}
+        <div class="col-md-3">
+            <div class="card  text-center ">
+                <div class="card-header bg-info">
+                    Product Category
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="la_categoria">Elija la categoria a filtrar</label>
+                            <select class="form-control" name= "la_categoria" id="la_categoria">
+                                {% for categoria in categorias %}
+                                <option value="{{ forloop.counter }}">{{ categoria.nombre }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-outline-info">Filter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="album py-5">
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3">

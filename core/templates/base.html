@@ -29,14 +29,12 @@
 					<a class="nav-link active" href="/">Inicio</a>
 				</li>
 			</ul>
-
 			<form class="form-inline mt-2 mt-md-0" action="" method="POST">
 				{% csrf_token %}
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown">
-						<a class="nav-link active dropdown-toggle"
-							id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
+						<a class="nav-link active dropdown-toggle" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							{% if user.is_authenticated %}
 							{{ user.username}}
 							{% else %}
@@ -66,14 +64,14 @@
 			</form>
 		</div>
 		{% if user.is_authenticated %}
-                    <a class="btn btn-success btn-sm ml-3" href="{% url 'carrito_url' %}">
-                        <img src={% static "carrito3.png" %} width="16" height="16" class="d-inline-block align-center" alt=""
+		<a class="btn btn-success btn-sm ml-3" href="{% url 'carrito_url' %}">
+			<img src={% static "carrito3.png" %} width="16" height="16" class="d-inline-block align-center" alt=""
 				loading="lazy"></img>
-                        <i class="fa fa-shopping-cart"></i> 
-                        <span class="badge badge-light">12</span>
-                    </a>
+			<i class="fa fa-shopping-cart"></i>
+			<span class="badge badge-light">12</span>
+		</a>
 		{% else %}
-			
+
 		{% endif %}
 	</nav>
 
@@ -84,7 +82,8 @@
 		<div class="container pt-md-0">
 			<p class="font-size-sm text-center py-3" style="margin-bottom: 0;">
 				<span class="text-light opacity-50">© Todos los derechos reservados. Hecho por</span>
-				<a class="nav-link-style nav-link-light" href="https://github.com/MaximoSav/Proyecto-Integrador-Django/" target="_blank" rel="noopener">
+				<a class="nav-link-style nav-link-light" href="https://github.com/MaximoSav/Proyecto-Integrador-Django/"
+					target="_blank" rel="noopener">
 					El papi como siempre...</a>
 			</p>
 		</div>

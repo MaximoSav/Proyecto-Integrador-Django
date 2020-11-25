@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Categoria
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(label="Email")
@@ -11,4 +12,6 @@ class RegisterForm(UserCreationForm):
         fields = ('username', 'password1', 'password2', 'email', 'telefono', 'first_name', 'last_name')
 
 class BaseForm(forms.Form):
-    search = forms.CharField(label='Search', max_length=100)
+    search = forms.CharField(label='Search', max_length=100, required=False)
+    la_categoria = forms.ModelChoiceField(queryset=Categoria.objects.all(), required=False)
+    
