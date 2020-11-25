@@ -6,7 +6,7 @@
 
 <body>
     {% block content %}
-    <div style="position: relative; top: 0; left: 0;width:100%;height:86%;display:flex;">
+    <div style="position: relative; top: 0; left: 0;width:100%;display:flex;">
         <form class="form-signin text-center" method="POST">
 
             {% csrf_token %}
@@ -25,11 +25,24 @@
                 <input type="password" name="password2" id="id_password2" class="form-control"
                     placeholder="Repita su contraseña" required>
 
+                <label for="id_first_name" class="sr-only">Nombre</label>
+                <input type="text" name="first_name" id="id_first_name" class="form-control" 
+                placeholder="Nombre" required>
+
+                <label for="id_last_name" class="sr-only">Apellido</label>
+                <input type="text" name="last_name" id="id_last_name" class="form-control" 
+                placeholder="Apellido" required>
+
+                <label for="id_telefono" class="sr-only">Telefono</label>
+                <input type="text" name="telefono" id="id_telefono" class="form-control" 
+                placeholder="Telefono" required>
+
                 <label for="id_email" class="sr-only">Email</label>
                 <input type="email" name="email" id="id_email" class="form-control" 
-                placeholder="Ingrese su email" required>
+                placeholder="Correo electronico" required>
                 <small id="emailHelp" class="form-text text-muted">
                     Nunca compartiremos su e-mail con nadie más.</small>
+
             </div>
 
             <ul>

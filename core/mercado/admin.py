@@ -44,9 +44,9 @@ class CategoriaAdmin(admin.ModelAdmin):
     )
     list_display = ['nombre']
 
-admin.site.register(Cliente, ClienteAdmin)
+admin.site.register(Cliente,)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Divisa)
-admin.site.register(Direccion, DireccionAdmin)
+admin.site.register(Direccion,)
 admin.site.register(Destacado)

@@ -36,7 +36,12 @@ def registerView(request):
         else:
             form = RegisterForm(request.POST)
             if form.is_valid():
-                form.save()
+                user = form.save()
+                user.refresh_from_db()
+                user.cliente.telefono = form.cleaned_data['telefono']
+                user.first_name = form.cleaned_data.get('first_name')
+                user.last_name = form.cleaned_data.get('last_name')
+                user.save()
                 return redirect("login_url")
     else:
         form = RegisterForm()
