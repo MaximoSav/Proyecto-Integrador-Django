@@ -19,7 +19,7 @@
             <div class="carousel-inner">
                 {% for destacado in destacados %}
                 <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" data-interval="10000">
-                    <img src="{{ destacado.producto.foto.url }}" class="d-block w-100" alt="...">
+                    <img src="{{ destacado.imagen.url }}" class="d-block w-100" alt="...">
                 </div>
                 {% endfor %}
             </div>

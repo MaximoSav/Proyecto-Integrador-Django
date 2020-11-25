@@ -46,11 +46,12 @@ class Divisa (models.Model):
 
 
 class Destacado(models.Model):
-    producto = models.OneToOneField(
-        Producto, on_delete=models.CASCADE, primary_key=True,)
+    id = models.AutoField(primary_key=True, default=1)
+    imagen = models.ImageField(max_length=100, upload_to='fotos_destacados/',
+                               default=None, blank=True,)
 
     def __str__(self):
-        return self.producto.nombre
+        return str(self.id)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
