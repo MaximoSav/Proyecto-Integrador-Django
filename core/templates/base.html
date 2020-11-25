@@ -68,7 +68,7 @@
 			<img src={% static "carrito3.png" %} width="16" height="16" class="d-inline-block align-center" alt=""
 				loading="lazy"></img>
 			<i class="fa fa-shopping-cart"></i>
-			<span class="badge badge-light">12</span>
+			<span class="badge badge-light">{{ request.session.cart.items|length }}</span>
 		</a>
 		{% else %}
 

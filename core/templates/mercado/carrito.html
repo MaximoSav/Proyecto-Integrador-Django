@@ -2,41 +2,33 @@
 {% load static %}
 {% load cart_tags %}
 
-
-
 <body>
     {% block content %}
-        {% if request.sessions.cart.items %}
-            {% for key, value in request.sessions.cart.items %}
-                <tr class="text-center">
-                    <td>{{ value.nombre }}</td>
-                    <td>{{ value.stock }}</td>
-                    <td>
-                        <a
-                            href="{% url 'cart:add_producto' value.product_id"
-                            class="btn btn-sm btn-success"    
-                        >
-                            +
-                        </a>
-                        <a 
-                            href="{% url 'cart:decrement_product' value.product_id"
-                            class="ml-2 btn-sm btn btn-danger"
-                        >
-                            -
-                        </a>
-                        Total {{ value.price|multiply:value.stock|money_format:"$" }}
-                    </td>
-                </tr>
-            {% endfor %}
-        
-        {% else %}
-            <tr>
-                <td>
-                    <div class="alert alert-danger text-center">
-                        No tienes productos agregados a tu carrito
-                    </div>
-                </td>
-            </tr>
-        {% endif %}
-	{% endblock %}
+    {% if request.session.cart.items %}
+    {% for key, producto in request.session.cart.items %}
+    <tr class="text-center">
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.stock }}</td>
+        <td>
+            <a href="{% url 'add_product' producto.product_id %}" class="btn btn-sm btn-success">
+                +
+            </a>
+            <a href="{% url 'decrement_product' producto.product_id %}" class="ml-2 btn-sm btn btn-danger">
+                -
+            </a>
+            Total {{ producto.precio|multiply:producto.stock}}
+        </td>
+    </tr>
+    {% endfor %}
+
+    {% else %}
+    <tr>
+        <td>
+            <div class="alert alert-danger text-center">
+                No tienes productos agregados a tu carrito
+            </div>
+        </td>
+    </tr>
+    {% endif %}
+    {% endblock %}
 </body>

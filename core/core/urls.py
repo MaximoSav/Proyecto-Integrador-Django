@@ -20,7 +20,7 @@ from core import settings
 
 urlpatterns = [
     path('', include('mercado.urls')),
-    path('cart/', include(('cart.urls', 'cart'), namespace='cart')),
+    path('cart/', include('cart.urls')),
     path('admin/', admin.site.urls),
     path('jet/', include('jet.urls', 'jet')),
     path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),

@@ -11,7 +11,7 @@ class Cart:
             cart = self.session["cart"] = {}
         self.cart = cart
 
-    def addProducto(self, Producto):
+    def add(self, Producto):
         if str(Producto.id) not in self.cart.keys():
             self.cart[Producto.id] = {
                 "product_id": Producto.id,
@@ -25,13 +25,14 @@ class Cart:
                 if key == str(Producto.id):
                     value["stock"] = value["stock"] + 1
                     break
+
         self.save()
 
     def save(self):
         self.session["cart"] = self.cart
         self.session.modified = True
 
-    def removeProducto(self, Producto):
+    def remove(self, Producto):
         producto_id = str(Producto.id)
         if producto_id in self.cart:
             del self.cart[producto_id]
@@ -51,4 +52,4 @@ class Cart:
 
     def clear(self):
         self.session["cart"] = {}
-        self.session.modified = True    
+        self.session.modified = True
