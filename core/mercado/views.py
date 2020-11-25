@@ -24,6 +24,7 @@ def BaseView(request):
         return render(request, 'mercado/main.html', {'productos': productos, 'destacados': destacados, })
 
 
+
 def registerView(request):
     if request.method == "POST":
         if 'search' in request.POST:
