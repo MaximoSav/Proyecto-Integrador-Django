@@ -6,7 +6,7 @@ from .cart import Cart
 # Create your views here.
 
 
-@login_required(login_url="/autentication/login")
+@login_required(login_url="/accounts/login/")
 def add_product(request, product_id):
     cart = Cart(request)
     product = Producto.objects.get(id=product_id)
@@ -14,7 +14,7 @@ def add_product(request, product_id):
     return redirect('/carrito/')
 
 
-@login_required(login_url="/autentication/login")
+@login_required(login_url="/accounts/login/")
 def remove_product(request, product_id):
     cart = Cart(request)
     product = Producto.objects.get(id=product_id)
@@ -22,7 +22,7 @@ def remove_product(request, product_id):
     return redirect('/carrito/')
 
 
-@login_required(login_url="/autentication/login")
+@login_required(login_url="/accounts/login/")
 def decrement_product(request, product_id):
     cart = Cart(request)
     product = Producto.objects.get(id=product_id)
@@ -30,7 +30,7 @@ def decrement_product(request, product_id):
     return redirect('/carrito/')
 
 
-@login_required(login_url="/autentication/login")
+@login_required(login_url="/accounts/login/")
 def clear_cart(request):
     cart = Cart(request)
     cart.clear()

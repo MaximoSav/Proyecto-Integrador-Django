@@ -4,6 +4,7 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .models import Producto, Destacado, Categoria
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -27,7 +28,7 @@ def BaseView(request):
                 los_productos = las_categorias.producto_set.all()
                 destacados = Destacado.objects.all()
                 categorias = Categoria.objects.all()
-                return render(request, 'mercado/main.html', {'productos': los_productos, 'destacados': destacados, 'categorias': categorias})
+                return render(request, 'mercado/main.html', {'productos': los_productos, 'destacados': destacados, 'categorias': categorias , 'categoria_selected': las_categorias})
     else:
         form = BaseForm()
         productos = Producto.objects.all()
@@ -72,3 +73,17 @@ def logoutView(request):
 
 def carritoView(request):
     return render(request, 'mercado/carrito.html')
+
+def configView(request):
+    if request.method == "POST":
+        form = ConfigForm(request.POST)
+        user = User.objects.get(username__exact=request.user)
+        if form.is_valid():
+            user.cliente.telefono = form.cleaned_data['telefono']
+            user.email = form.cleaned_data.get('email')
+            user.first_name = form.cleaned_data.get('first_name')
+            user.last_name = form.cleaned_data.get('last_name')
+            user.save()
+            return redirect("base_url")
+    else:
+        return render(request, "mercado/account.html",)

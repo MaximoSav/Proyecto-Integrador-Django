@@ -40,26 +40,33 @@
             </a>
         </div>
         {% endif %}
-        <div class="col-md-3">
-            <div class="card  text-center ">
-                <div class="card-header bg-info">
-                    Product Category
-                </div>
-                <div class="card-body">
-                    <form method="POST">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label for="la_categoria">Elija la categoria a filtrar</label>
-                            <select class="form-control" name="la_categoria" id="la_categoria">
-                                {% for categoria in categorias %}
-                                <option value="{{ forloop.counter }}">{{ categoria.nombre }}</option>
-                                {% endfor %}
-                            </select>
+        <div class="container w-50 h-100">
+            <div class="row justify-content-center h-100">
+                <div class="col-sm-8 align-self-center text-center">
+                    <div class="card shadow">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="la_categoria">Elija la categoria a filtrar</label>
+                                        <select class="form-control" name="la_categoria" id="la_categoria">
+                                            {% for categoria in categorias %}
+
+                                            <option {% if categoria_selected.id == forloop.counter %} 
+                                            selected="true" 
+                                            {% endif %} value="{{ forloop.counter }}">{{ categoria.nombre }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-info">Filtrar</button>
+                                </form>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-info">Filter</button>
-                    </form>
+                    </div>
                 </div>
             </div>
+        </div>
         </div>
         <div class="album py-5">
             <div class="container">
@@ -72,15 +79,17 @@
                                 <h5 class="card-title">{{ producto.nombre }}</h5>
                                 <p class="card-text">{{ producto.descripcion }}</p>
                             </div>
-                            <div class="card-body d-flex justify-content-between align-items-end">
+                            <div class="card-body d-flex justify-content-between align-middle">
+
                                 <div>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
                                     <a type="button" href="{% url 'add_product' producto.id %}"
                                         class="btn btn-sm btn-outline-secondary">Agregar al
                                         carro</a>
                                 </div>
-
+                                <h5 class="card-title">${{ producto.precio }}</h5>
                             </div>
+
                             <div class="card-footer">
                                 <small class="text-muted">Quedan {{ producto.stock }} en stock.</small>
                             </div>
