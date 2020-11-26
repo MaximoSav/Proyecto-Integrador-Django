@@ -40,6 +40,7 @@
             </a>
         </div>
         {% endif %}
+        {% if productos %}
         <div class="container w-50 h-100">
             <div class="row justify-content-center h-100">
                 <div class="col-sm-8 align-self-center text-center">
@@ -53,9 +54,9 @@
                                         <select class="form-control" name="la_categoria" id="la_categoria">
                                             {% for categoria in categorias %}
 
-                                            <option {% if categoria_selected.id == forloop.counter %} 
-                                            selected="true" 
-                                            {% endif %} value="{{ forloop.counter }}">{{ categoria.nombre }}</option>
+                                            <option {% if categoria_selected.id == forloop.counter %} selected="true"
+                                                {% endif %} value="{{ forloop.counter }}">{{ categoria.nombre }}
+                                            </option>
                                             {% endfor %}
                                         </select>
                                     </div>
@@ -67,7 +68,7 @@
                 </div>
             </div>
         </div>
-        </div>
+        {% endif %}
         <div class="album py-5">
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-3">
@@ -82,7 +83,6 @@
                             <div class="card-body d-flex justify-content-between align-middle">
 
                                 <div>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
                                     <a type="button" href="{% url 'add_product' producto.id %}"
                                         class="btn btn-sm btn-outline-secondary">Agregar al
                                         carro</a>
@@ -96,6 +96,7 @@
                         </div>
                     </div>
                     {% endfor %}
+
                 </div>
             </div>
         </div>
