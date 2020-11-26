@@ -19,7 +19,7 @@ class DireccionAdmin(admin.ModelAdmin):
 class ClienteAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Datos', {
-            'fields': ('DNI', 'nombre', 'telefono', 'direccion')
+            'fields': ('nombre', 'telefono', 'direccion')
 
         }),
     )
@@ -35,14 +35,19 @@ class ProductoAdmin (admin.ModelAdmin):
         }),
     )
     list_display = ['nombre', 'descripcion', 'precio', 'stock', 'categoria']
+    search_fields = ['nombre',]
 
 class CategoriaAdmin(admin.ModelAdmin):
+    class ProductoInline(admin.TabularInline):
+        model = Producto
+    
     fieldsets = (
         ('Datos', {
             'fields': ('nombre',)
         }),
     )
     list_display = ['nombre']
+    inlines = [ProductoInline]
 
 admin.site.register(Cliente,)
 admin.site.register(Producto, ProductoAdmin)
