@@ -53,7 +53,7 @@ class Divisa (models.Model):
 
 
 class Destacado(models.Model):
-    id = models.AutoField(primary_key=True, default=1)
+    id = models.AutoField(primary_key=True,)
     imagen = models.ImageField(max_length=100, upload_to='fotos_destacados/',
                                default=None, blank=True,)
 
