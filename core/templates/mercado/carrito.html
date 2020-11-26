@@ -17,6 +17,11 @@
                 -
             </a>
             Total {{ producto.precio|multiply:producto.stock}}
+            <ol type=”A”>
+                <li>Total {{ producto.precio|multiply:producto.stock}}</li>
+                <li>Dolares {{ producto.precio|dolar:producto.stock}}</li>
+                <li>Euros {{ producto.precio|euro:producto.stock}}</li>
+            </ol>
         </td>
     </tr>
     {% endfor %}
