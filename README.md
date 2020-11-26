@@ -2,6 +2,9 @@
 
 # Proyecto-Integrador-Django [![GitHub release](https://img.shields.io/badge/release-none-blue)](https://github.com/MaximoSav/Proyecto-Integrador-Django/releases) [![Language](https://img.shields.io/badge/lang-espa%C3%B1ol%20%2F%20english-yellow)](#)
 Proyecto realizado por Franco Benito y Maximo Savino del Instituto Técnico Salesiano Villada (ITSV).
+
+## Introduccion:
+	Nuestro proyecto es una pagina web, en la cual como objetivo es la venta de productos. En esta los clientes se pueden registrar, loguear, gestionar su cuenta, agregar productos a su carrito y ver el precio entre diferentes divisas. Luego esta el admin, que puede gestionar productos, precios, categorias, destacados y usuarios.
  
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/MaximoSav/Proyecto-Integrador-Django?style=for-the-badge&logo=appveyor">
 <img alt="GitHub forks" src="https://img.shields.io/github/forks/MaximoSav/Proyecto-Integrador-Django?style=for-the-badge&logo=appveyor">

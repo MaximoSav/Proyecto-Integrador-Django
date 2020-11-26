@@ -47,6 +47,5 @@ class CategoriaAdmin(admin.ModelAdmin):
 admin.site.register(Cliente,)
 admin.site.register(Producto, ProductoAdmin)
 admin.site.register(Categoria, CategoriaAdmin)
-admin.site.register(Divisa)
 admin.site.register(Direccion,)
 admin.site.register(Destacado)
