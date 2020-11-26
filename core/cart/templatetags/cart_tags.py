@@ -14,8 +14,8 @@ def money_format(value, arg):
 
 @register.filter()
 def dolar(value, arg):
-    return str(float(value / 85.75) * float(arg))
+    return str(float("{0:.2f}".format(value / 85.75)) * float(arg))
 
 @register.filter()
 def euro(value, arg):
-    return str(float(value / 96.5) * float(arg))
+    return str(float("{0:.2f}".format(value / 90.5)) * float(arg))

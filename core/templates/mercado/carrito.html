@@ -2,38 +2,42 @@
 {% load static %}
 {% load cart_tags %}
 
-<body>
-    {% block content %}
-    {% if request.session.cart.items %}
-    {% for key, producto in request.session.cart.items %}
-    <tr class="text-center">
-        <td>{{ producto.nombre }}</td>
-        <td>{{ producto.stock }}</td>
-        <td>
-            <a href="{% url 'add_product' producto.product_id %}" class="btn btn-sm btn-success">
-                +
-            </a>
-            <a href="{% url 'decrement_product' producto.product_id %}" class="ml-2 btn-sm btn btn-danger">
-                -
-            </a>
-            Total {{ producto.precio|multiply:producto.stock}}
-            <ol type=”A”>
-                <li>Total {{ producto.precio|multiply:producto.stock}}</li>
-                <li>Dolares {{ producto.precio|dolar:producto.stock}}</li>
-                <li>Euros {{ producto.precio|euro:producto.stock}}</li>
-            </ol>
-        </td>
-    </tr>
-    {% endfor %}
 
-    {% else %}
-    <tr>
-        <td>
-            <div class="alert alert-danger text-center">
-                No tienes productos agregados a tu carrito
+{% block content %}
+{% if request.session.cart.items %}
+<div class="album py-5">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for key, producto in request.session.cart.items %}
+
+            <div class="col mb-4">
+                <div class="card">
+                    <img src=" {{ producto.foto }} " class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ producto.nombre }}</h5>
+                        <p class="card-text font-weight-bold">Cantidad: {{ producto.stock }}</p>
+                        <div>
+                            <p class="font-weight-bold mb-1">ARS${{ producto.precio|multiply:producto.stock}}</p>
+                            <p class="font-weight-bold mb-1">USD${{ producto.precio|dolar:producto.stock}}</p>
+                            <p class="font-weight-bold">€{{ producto.precio|euro:producto.stock}}</p>
+                        </div>
+                        <a href="{% url 'add_product' producto.product_id %}" class="btn btn-success">+</a>
+                        <a href="{% url 'decrement_product' producto.product_id %}" class="btn btn-danger">-</a>
+                    </div>
+                </div>
             </div>
-        </td>
-    </tr>
-    {% endif %}
-    {% endblock %}
-</body>
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% else %}
+<tr>
+    <td>
+        <div class="alert alert-danger text-center">
+            No tienes productos agregados a tu carrito
+        </div>
+    </td>
+</tr>
+{% endif %}
+{% endblock %}
